@@ -77,3 +77,5 @@ list1 = [1,2,3,4]
 list2 = [2,3,4,5]
 list3= list1+list2
 print(list3)
+
+#you have to do CRUD operation in python list
