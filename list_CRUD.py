@@ -1,26 +1,43 @@
-input_1 = input("enter list: ")
-list_1 =  input_1.split()
-print("your list is: ", list_1)
+try:
+
+    main_user=int(input("type '0' to create list  \ntype '1' update by index  \ntype '2' to delete by index list \ntype '3' to delete list: "))
+    if main_user>=0 and main_user <=3:
+    
+
+        input_1 = input("enter list: ")
+        list_1 =  input_1.split()
+        print("your list is: ", list_1)
+        main_user1 = int(input("choose what yout want to do: "))
+        try:
+            if main_user1==1 or main_user==1:
+               input_2 = int(input("enter index number: "))
+               input_3 = input("enter number to change: ")
+               list_1.pop(input_2)
+               list_1.insert(input_2,input_3)
+               print(list_1) 
+               print("updated number",input_3)
+            elif main_user1==2 or main_user==2:
+               input_4 = int(input("give index number: "))
+               print("value deleted",list_1[input_4])
+               list_1.pop(input_4)
+               print(list_1)
+            elif main_user1==3 or main_user==3:
+               del list_1
+               print("list is deleted")
+        except ValueError:
+            print("please give integer input")
+    
+    else:
+        print("type correct number, please")
+except Exception as e:
+        print(e)  
+
+
+
+'''
 input_2 = input("update list: ")
 list2 = input_2.split()
 list_1.extend(list2)
 print("your updated list: ",list_1)
-print("length of list ",len(list_1))
-try:
-  input_3 = int(input("delete list by index number: "))
-  print("deleted list element  is: ",list_1[input_3])
 
-  list_1.pop(input_3)
-  print("after deleting index no:",input_3,"list element",list_1)
-except:
-    print("type correct index"," less than: ",len(list_1))
-
-
-input_4 = input("type 'delete' to delete list: ")
-if input_4=="delete":
-    del list_1
-    print("list is deleted: ")
-else:
-    print("type correct keyword")
-
-#some work need to be done
+'''
