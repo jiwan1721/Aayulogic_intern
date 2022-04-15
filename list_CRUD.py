@@ -34,6 +34,7 @@ except Exception as e:
 
 
 
+
 '''
 input_2 = input("update list: ")
 list2 = input_2.split()
@@ -41,3 +42,15 @@ list_1.extend(list2)
 print("your updated list: ",list_1)
 
 '''
+
+'''print("type '0' to create list  \ntype '1' update by index  \ntype '2' to delete by index list \ntype '3' to delete list: ")
+user_input = int(input("enter number: "))
+if 0<=user_input<=3:
+    if user_input==0:
+        create_input = input("enter list: ")
+        list1 = create_input.split()
+        print(list1)
+    elif user_input==1:
+        delete_index = int(input("enter index: "))
+        list1.pop(delete_index)
+        print(list1)'''
