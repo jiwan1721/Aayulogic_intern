@@ -26,10 +26,15 @@ def delete():
     del delete_list
     print("list is deleted")
 
-def delete_index(del_index_no):
-    print("deleted number is: ", TO_DO_lIST[del_index_no])
-    TO_DO_lIST.pop(del_index_no)
-    print("after deleting num", TO_DO_lIST)
+def delete_index():
+    try:
+        del_index_no = int(input("give index no you want to delete: "))
+        print("deleted number is: ", TO_DO_lIST[del_index_no])
+        TO_DO_lIST.pop(del_index_no)
+        print("after deleting num", TO_DO_lIST)
+    except ValueError:
+        print("git integer only: ")
+            
 
 print("type '0' to create list  \ntype '1' update by index  \ntype '2' to delete by index list \ntype '3' to delete list: ")
 

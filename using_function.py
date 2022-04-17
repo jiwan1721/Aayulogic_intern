@@ -44,9 +44,9 @@ try:
                         update_list(index_input,number_input)
                     except ValueError:
                          print("only give input of integer")
-                elif user_input==2:
+                elif user_input_operation==2:
                     delete()
-                elif user_input==3:
+                elif user_input_operation==3:
                     delete_index()
             except ValueError:
                 print("give integer input")
