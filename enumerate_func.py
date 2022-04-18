@@ -10,6 +10,6 @@ for i, x in enumerate(list2):
     if i%2 ==0:
         print(x)
 
-for i in enumerate(list2):
+'''for i in enumerate(list2):
     if i%2 ==0:
-        print(i)
+        print(i)'''

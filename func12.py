@@ -1,5 +1,12 @@
 
 TO_DO_lIST = []
+
+def tryException():
+    try:
+    
+    except ValueError:
+        print("")
+
 def create_list():
     list_input=input("enter list: ")
     list_input=list_input.split()
@@ -10,14 +17,15 @@ def create_list():
 def update_list():
     try:
         index_number = int(input("enter index number: "))
+    except ValueError:
+        print("give input integer only: ")
         number = input("enter the number you want to update: ")
         #create_list(pop(index_number))
         # upadate_index = create_list(insert())
         TO_DO_lIST.pop(index_number)
         TO_DO_lIST.insert(index_number,number)
         print("updated list",TO_DO_lIST)
-    except ValueError:
-        print("give input integer only: ")
+    
        
     
 def delete():
@@ -33,31 +41,29 @@ def delete_index():
         TO_DO_lIST.pop(del_index_no)
         print("after deleting num", TO_DO_lIST)
     except ValueError:
-        print("git integer only: ")
+        print("give integer only: ")
             
 
 print("type '0' to create list  \ntype '1' update by index  \ntype '2' to delete by index list \ntype '3' to delete list: ")
 
 try:
     user_input =int((input("enter number: ")))
+except ValueError:
+    print("only give input of integer")
     if 0<=user_input<=2:
         if user_input==0:  
             create_list()
             try:
                 user_input_operation =int((input("enter number: ")))
-                if user_input_operation==1:      
-                    update_list()
-                elif user_input_operation==2:
-                    delete()
-                elif user_input_operation==3:
-                    delete_index()
             except ValueError:
                 print("give integer input")
-            
-        
+            if user_input_operation==1:      
+                update_list()
+            elif user_input_operation==2:
+                delete()
+            elif user_input_operation==3:
+                delete_index()        
         else:
             print("first enter '0' please: ")
     else:
         print("type correct number please: ")
-except ValueError:
-    print("only give input of integer")
