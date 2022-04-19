@@ -42,34 +42,38 @@ file.write(" hero baneko hora")
 # print(less_than_hundrade)
 # print(greater_than_hundrade)
 # print(greater_than_twoHundrade)
-file_csv = open('bsic.csv','r+')
-
-file = list(file_csv)
-y=file[0]
 
 
-print(y)
-less_2 = open('les_200.csv','w+')
 
-less_hundrade = open('less_than_hundrade.csv','w+')
+def file_func(file):
 
-greater_200 = open('greater_200.csv','w+')
+    file = list(file_csv)
+    for index, item in enumerate(file):
+        if index == 0:
+            less_2 = open('les_200.csv','w+')
 
-for index, item in enumerate(file):
-    if index == 0:
-        less_2.write(item)
-        continue
-    price=int(item.split(",")[1])
-   
-   
-    if price<101:
+            less_hundred = open('less_than_hundrade.csv','w+')
+
+            greater_200 = open('greater_200.csv','w+')
+            less_2.write(item)
+            continue
         
-        less_hundrade.write(item)
-    elif price<200:
         
-        less_2.write(item)
-    else:
-        greater_200.write(item)
+        
+        price=int(item.split(",")[1])
+    
+    
+    
+        if price<=100:
+            
+            less_hundred.write(item)
+        elif price<=200:
+            
+            less_2.write(item)
+        else:
+            greater_200.write(item)
             
         
-    
+file_csv = open('bsic.csv','r+')
+
+file_func(file_csv)
