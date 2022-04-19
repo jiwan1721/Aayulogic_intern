@@ -3,9 +3,10 @@ TO_DO_lIST = []
 
 def tryException():
     try:
+        print()
     
     except ValueError:
-        print("")
+        print("give integer only: ")
 
 def create_list():
     list_input=input("enter list: ")

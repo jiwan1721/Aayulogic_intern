@@ -6,7 +6,7 @@ def userlist(duplicate_value):
             my_list2.append(item)
         else:
             my_list3.append(item)
-            
+    print(my_list2)        
     print(my_list3)
 
 def ReverseFunc(user_list_1):
