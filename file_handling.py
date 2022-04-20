@@ -57,13 +57,7 @@ def file_func(file):
             greater_200 = open('greater_200.csv','w+')
             less_2.write(item)
             continue
-        
-        
-        
         price=int(item.split(",")[1])
-    
-    
-    
         if price<=100:
             
             less_hundred.write(item)
@@ -72,8 +66,7 @@ def file_func(file):
             less_2.write(item)
         else:
             greater_200.write(item)
-            
-        
+                   
 file_csv = open('bsic.csv','r+')
 
 file_func(file_csv)
