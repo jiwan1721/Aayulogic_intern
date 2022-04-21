@@ -1,27 +1,16 @@
-from asyncore import read
-import csv
-file = open('homework.csv','r')
-reader = csv.reader(file)
-for i in reader:
-    print(i)
-# dict_from_csv = {rows[0]:rows[2] for rows in reader}
-# print(dict_from_csv)
-for line in csv.DictReader(reader):
-    print(line)
+# import csv
+# file = open('homework.csv','r+')
+# reader = csv.reader(file)
+
+# for line in csv.DictReader(reader):
+#    print(line)
 # #file = 'homework.csv'
 # def print_dictionary(file):
-#     file = (file)
-#     print(file)
-#     # with open(file) as data:
-#     #     for line in csv.DictReader(data):
-#     #         print(line)
     
-#     for index, item in enumerate(file):
-#         print(index)
-#         new_dict = item.split(',')
-#         print(new_dict)
-#         for index1, item1 in enumerate(new_dict):
-#             print(item1)    
+#     with open(file) as data:
+#         for line in csv.DictReader(data):
+#             print(line)
+    
 
 # for rows in reader:
 #         k = rows[0]
@@ -33,3 +22,80 @@ for line in csv.DictReader(reader):
 
 
 # print_dictionary(file)
+# import csv
+
+# new_data_dict = {}
+# with open("homework.csv", 'r') as data_file:
+#     data = csv.DictReader(data_file, delimiter=",")
+#     for row in data:
+#         item = new_data_dict.get(row["name"], dict())
+#         item[row["address"]] = int(row["gender"])
+
+#         new_data_dict[row["name"]] = item
+
+# print(new_data_dict)
+# fhandle = open('homework.csv')
+# reviews={}
+# for line in fhandle:
+#     words = line.split(',')
+#     reviews.update({words[0]: {}})
+#     n = len(words)
+#     for i in range(1, n-1, 2):
+#         if words[0] in reviews.keys():
+#             reviews[words[0]].update({words[i]:words[i+1]})
+# print(reviews)
+
+file = open('homework.csv','r')
+file = list(file)
+
+
+def user_detail(file):
+    
+    user_dtl = []
+    for item in file[1:]:
+        user_list_splited = item.split(",")
+        name = user_list_splited[0]
+        address = user_list_splited[1]
+        gender = user_list_splited[2]
+        district = ""
+
+        if len(address.split(" ")) == 2:
+            district = address.split(" ")[1]
+            if district=='kathmandu':
+                
+        
+                user_info = {
+                        'name':{
+                            'first_name':name.split(" ")[0],
+                            'lastname':name.split(" ")[1]
+                        },
+                        'address':{
+                            'location':address.split(" ")[0],
+                            'district': district
+                        },
+                        'gender': gender[:-1]
+                }
+                
+        user_dtl.append(user_info)
+    return user_dtl
+        
+
+
+
+print(user_detail(file))
+
+
+
+
+# reader1 = csv.reader(file)
+
+# people = {}
+# details=[]
+# for row in reader1:
+#     people[row[0]]={
+#         'address':row[1],
+#         'gender':row[2]
+#         }
+    
+# print(people)
+#first load the file

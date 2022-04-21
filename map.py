@@ -19,24 +19,40 @@ def add(a,b,c=0):
 
 print(add(3,3,5))
 print(add(2, 3))
-
-name_List = ['jiwan','hero','jack','john','hand']
+# try:
+name_List = ['jiwan','hero','jack','john','hand','rakesh','']
+#     if not name_List:
+#         raise ValueError('empty string')
+# except ValueError as e:
+#     print(e)
 def names_j(name_List):
-    name = []
-    different =[]
-    name_first=[]
-    for item in name_List:
-        name_first.append(item[0])
-    print(name_first)
-    for item in name_List:
-        if item[0]==name_first:
-            name.append(item)
+ 
+    name_first={}
+    try:
 
-
-
+        for item in name_List:
+            if item[0] not in name_first:              #Details["Age"] += [20, "Twenty"]
+                name_first[item[0]]=[item]
+            else:
+                    name_first[item[0]].append(item)
         
-    print(name)
-    print(different)
+        
+        
+        print(name_first)
+    except IndexError:
+        print("index rakhna bey")
+
+
+    # for item in name_first:
+    #     if item[0]:
+    #         different.append(item)
+    # res = dict(zip(set(different),name_List))
+
+    # print(different)
+    # print(str(res))
+
+    #key = set(different)
+    #print(key)
     
 
 names_j(name_List)
