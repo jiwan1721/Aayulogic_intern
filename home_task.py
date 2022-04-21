@@ -49,7 +49,7 @@ file = open('homework.csv','r')
 file = list(file)
 
 
-def user_detail(file):
+def user_detail():
     
     user_dtl = []
     for item in file[1:]:
@@ -61,28 +61,42 @@ def user_detail(file):
 
         if len(address.split(" ")) == 2:
             district = address.split(" ")[1]
-            if district=='kathmandu':
                 
         
-                user_info = {
-                        'name':{
-                            'first_name':name.split(" ")[0],
-                            'lastname':name.split(" ")[1]
-                        },
-                        'address':{
-                            'location':address.split(" ")[0],
-                            'district': district
-                        },
-                        'gender': gender[:-1]
-                }
+            user_info = {
+                    'name':{
+                        'first_name':name.split(" ")[0],
+                        'lastname':name.split(" ")[1]
+                    },
+                    'address':{
+                        'location':address.split(" ")[0],
+                        'district': district
+                    },
+                    'gender': gender[:-1]
+            }
                 
         user_dtl.append(user_info)
     return user_dtl
+
+print(user_detail())
         
 
+def user_detail_kathmandu(district_ktm):
+    district = user_detail()
+    ktm_list = []
+    for item in district:
+        if item['address']['district']== district_ktm:
+            
+            ktm_list.append(item)
+            
+        else:
+            print("not found")
+    return ktm_list
+    
 
 
-print(user_detail(file))
+
+print(user_detail_kathmandu('kathmandu'))
 
 
 
