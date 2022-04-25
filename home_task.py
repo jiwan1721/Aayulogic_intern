@@ -84,7 +84,9 @@ print(user_detail())
 def user_detail_kathmandu(district_ktm):
     district = user_detail()
     ktm_list = []
+    print(district)
     for item in district:
+        
         if item['address']['district']== district_ktm:
             
             ktm_list.append(item)
